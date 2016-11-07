@@ -1,0 +1,53 @@
+using System;
+
+namespace Special_Numbers
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double money= double.Parse(Console.ReadLine());
+            double moneyLeva = 0;
+            double moneyWanted = 0;
+            string firstCurrency = Console.ReadLine();
+            string secondCurrency = Console.ReadLine();
+            double usd = 1.79549;
+            double eur = 1.95583;
+            double gbp = 2.53405;
+            if(firstCurrency == "USD")
+            {
+                moneyLeva = money * usd;
+            }
+            else if (firstCurrency == "EUR")
+            {
+                moneyLeva = money * eur;
+            }
+            else if (firstCurrency == "GBP")
+            {
+                moneyLeva = money * gbp;
+            }
+            else if (firstCurrency == "BGN")
+            {
+                moneyLeva = money ;
+            }
+            if (secondCurrency == "USD")
+            {
+                moneyWanted = moneyLeva / usd;
+            }
+            else if (secondCurrency == "EUR")
+            {
+                moneyWanted = moneyLeva / eur;
+            }
+            else if (secondCurrency == "GBP")
+            {
+                moneyWanted = moneyLeva / gbp;
+            }
+            else if (secondCurrency == "BGN")
+            {
+                moneyWanted = moneyLeva;
+            }
+            Console.WriteLine("{0:f2} {1}",moneyWanted,secondCurrency);
+        }
+    }
+}
+
